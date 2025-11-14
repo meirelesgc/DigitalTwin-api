@@ -51,6 +51,8 @@ async def create_user(user: UserSchema, session: Session):
         email=user.email,
         username=user.username,
         password=hashed_password,
+        local=user.local,
+        tipo_do_veiculo=user.tipo_do_veiculo
     )
 
     session.add(db_user)

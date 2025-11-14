@@ -6,7 +6,7 @@ authors = [
     {name = "gmcosta",email = "geu_costa@outlook.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.13,<4.0"
+requires-python = ">=3.12,<4.0"
 dependencies = [
     "fastapi[standard] (>=0.121.2,<0.122.0)",
     "pydantic-settings (>=2.12.0,<3.0.0)",
@@ -46,5 +46,5 @@ preview = true
 pythonpath = "."
 
 [tool.taskipy.tasks]
-run = 'fastapi dev fast_zero/app.py'
-test = 'pytest -s -x --cov=fast_zero -vv'
+run = 'fastapi dev src/api/app.py'
+test = 'pytest -s -x --cov=src/api -vv'

@@ -8,6 +8,8 @@ class Message(BaseModel):
 class UserSchema(BaseModel):
     username: str
     email: EmailStr
+    tipo_do_veiculo: str
+    local: str
     password: str
 
 
@@ -15,6 +17,8 @@ class UserPublic(BaseModel):
     id: int
     username: str
     email: EmailStr
+    tipo_do_veiculo: str
+    local: str
     model_config = ConfigDict(from_attributes=True)
 
 
