@@ -96,11 +96,12 @@ print(df_veiculos['tipo_veiculo'].value_counts())
 
 print("\nContagem por Local de Trabalho:")
 print(df_veiculos['local_trabalho'].value_counts())
+df_ultimo = df_veiculos.sort_values(by="horario_chegada").groupby("id_veiculo").last().reset_index()
 
 # Exporta os dados para um arquivo que a aplicação possa ler
 try:
-    df_veiculos.to_csv('dados_hackathon_veiculos.csv', index=False)
-    df_veiculos.to_excel('dados_hackathon_veiculos.xlsx', index=False)
+    df_ultimo.to_csv('dados_hackathon_veiculos.csv', index=False)
+    df_ultimo.to_excel('dados_hackathon_veiculos.xlsx', index=False)
     print("\n--- SUCESSO! ---")
     print("Dados salvos em 'dados_hackathon_veiculos.csv' e 'dados_hackathon_veiculos.xlsx'")
 except Exception as e:
